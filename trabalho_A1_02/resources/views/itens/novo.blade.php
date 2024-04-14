@@ -4,8 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Novo Item</title>
-    <!-- Inclua o CSS do Bootstrap -->
+    <title>Avaliação A1/2</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 
@@ -25,7 +24,6 @@
             <button type="button" class="btn btn-secondary">Voltar</button>
         </form>
     </div>
-    <!-- Inclua o JS do Bootstrap -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
