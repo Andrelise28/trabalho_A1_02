@@ -14,5 +14,21 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('pedidos');
+    return view('pedidos.listagem');
 });
+
+// Route::get('/', function () {
+//     return view('pedidos.novo');
+// });
+
+// Route::get('/', function () {
+//     return view('pedidos.detalhes');
+// });
+
+// Route::get('/', function () {
+//     return view('itens.novo');
+// });
+
+// Route::get('/', function () {
+//     return view('itens.detalhes');
+// });
