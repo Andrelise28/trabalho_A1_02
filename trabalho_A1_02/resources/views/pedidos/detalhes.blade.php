@@ -22,7 +22,7 @@
             <button type="submit" class="btn btn-primary">Salvar</button>     
             <a type="button" class="btn btn-secondary" href="/">Voltar</a>
         </form>
-        <form method="POST" action="/pedido/{{ $pedido->id }}">
+        <form method="POST" class="mt-3" action="/pedido/{{ $pedido->id }}">
             @csrf
             @method('DELETE')
             <button type="submit" class="btn btn-danger">Excluir</button>
