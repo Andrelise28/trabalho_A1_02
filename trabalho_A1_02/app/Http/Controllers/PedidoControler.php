@@ -4,12 +4,28 @@ namespace App\Http\Controllers;
 
 use Illuminate\View\View;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
 
 class PedidoControler extends Controller
 {
     public function store()
     {
         $data = $_POST['data'];
+
+        $regras = [
+            'data' => 'required|date',
+        ];
+
+        $mensagens = [
+            'data.required' => 'O campo data é obrigatório.',
+            'data.date' => 'O campo data deve ser uma data válida.',
+        ];
+
+        $validacao = Validator::make(['data' => $data], $regras, $mensagens);
+
+        if ($validacao->fails()) {
+            return redirect()->back()->withErrors($validacao)->withInput();
+        }
 
         DB::table('pedido')->insert([
             'data' => $data
