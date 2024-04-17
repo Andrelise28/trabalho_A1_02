@@ -24,7 +24,7 @@
             </div>
             <button type="submit" class="btn btn-primary">Salvar</button>
         </form>
-        <form method="POST" action="/item/delete/{{ $item->id }}">
+        <form method="POST" class="mt-3" action="/item/delete/{{ $item->id }}">
             @csrf
             @method('DELETE')
             <button type="submit" class="btn btn-danger">Excluir</button>
