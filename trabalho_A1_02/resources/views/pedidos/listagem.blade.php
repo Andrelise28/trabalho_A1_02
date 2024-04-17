@@ -17,7 +17,7 @@
                     <h2>Pedidos</h2>
                 </div>
                 <div class="col-2">
-                    <button type="button" class="btn btn-primary">Novo pedido</button>
+                    <a type="button" class="btn btn-primary" href="/create">Novo pedido</a>
                 </div>
             </div>
             <div class="row">
@@ -33,24 +33,17 @@
                             </tr>
                         </thead>
                         <tbody class="table-group-divider">
+                            @foreach ($pedidos as $pedido)
                             <tr>
-                                <th scope="row">4</th>
-                                <td>2024-04-10</td>
-                                <td>3</td>
-                                <td>500.00</td>
+                                <th scope="row">{{ $pedido->id }}</th>
+                                <td>{{ $pedido->data }}</td>
+                                <td>{{ $pedido->qtdItens }}</td>
+                                <td>{{ $pedido->valorTotal }}</td>
                                 <td>
-                                    <button type="button" class="btn btn-warning">Detalhes</button>
+                                    <a type="button" class="btn btn-warning" href="/pedido/{{ $pedido->id }}">Detalhes</a>
                                 </td>
                             </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>2024-04-09</td>
-                                <td>2</td>
-                                <td>200.00</td>
-                                <td>
-                                    <button type="button" class="btn btn-warning">Detalhes</button>
-                                </td>
-                            </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>

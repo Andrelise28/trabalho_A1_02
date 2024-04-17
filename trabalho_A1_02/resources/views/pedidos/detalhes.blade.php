@@ -12,21 +12,27 @@
 
     <div class="container mt-3">
         <h2>Detalhes do pedido 4</h2>
-        <form>
+        <form method="POST" action="/pedido/{{ $pedido->id }}">
+            @csrf
+            @method('PUT')
             <div class="form-group">
                 <label for="data">Data</label>
-                <input type="date" class="form-control" id="data" value="2024-04-10">
+                <input type="date" class="form-control" id="data" name="data" value="{{ $pedido->data }}">
             </div>
-            <button type="submit" class="btn btn-primary">Salvar</button>
-            <button type="button" class="btn btn-danger">Excluir</button>
-            <button type="button" class="btn btn-secondary">Voltar</button>
+            <button type="submit" class="btn btn-primary">Salvar</button>     
+            <a type="button" class="btn btn-secondary" href="/">Voltar</a>
+        </form>
+        <form method="POST" action="/pedido/{{ $pedido->id }}">
+            @csrf
+            @method('DELETE')
+            <button type="submit" class="btn btn-danger">Excluir</button>
         </form>
         <div class="row mt-3">
             <div class="col-9">
                 <h2>Itens</h2>
             </div>
             <div class="col-3">
-                <button type="button" class="btn btn-secondary">Novo item</button>
+                <a type="button" class="btn btn-secondary" href="/item/novo/{{ $pedido->id }}">Novo item</a>
             </div>
         </div>
         <table class="table mt-3">
@@ -38,26 +44,18 @@
                     <th scope="col"></th>
                 </tr>
             </thead>
+            @foreach ($itens as $item)
             <tbody>
                 <tr>
-                    <th scope="row">1</th>
-                    <td>Descrição do item 1</td>
-                    <td>R$100.00</td>
-                    <td><button type="button" class="btn btn-info">Detalhes</button></td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Descrição do item 2</td>
-                    <td>R$150.00</td>
-                    <td><button type="button" class="btn btn-info">Detalhes</button></td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>Descrição do item 3</td>
-                    <td>R$250.00</td>
-                    <td><button type="button" class="btn btn-info">Detalhes</button></td>
+                    <th scope="row">{{ $item->id }}</th>
+                    <td>{{ $item->descricao }}</td>
+                    <td>{{ $item->preco }}</td>
+                    <td>
+                        <a type="button" class="btn btn-info" href="/item/detalhes/{{ $item->id }}">Detalhes</a>
+                    </td>
                 </tr>
             </tbody>
+            @endforeach
         </table>
     </div>
 

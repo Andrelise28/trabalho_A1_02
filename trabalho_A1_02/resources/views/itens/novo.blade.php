@@ -11,17 +11,18 @@
 <body>
     <div class="container mt-5">
         <h2>Novo item</h2>
-        <form>
+        <form method="POST" action="/item/store/{{ $pedidoId }}">
+            @csrf
             <div class="form-group">
                 <label for="descricao">Descrição</label>
                 <input type="text" class="form-control" id="descricao" name="descricao">
             </div>
             <div class="form-group">
                 <label for="valor">Valor</label>
-                <input type="text" class="form-control" id="valor" name="valor">
+                <input type="text" class="form-control" id="preco" name="preco">
             </div>
             <button type="submit" class="btn btn-primary">Salvar</button>
-            <button type="button" class="btn btn-secondary">Voltar</button>
+            <a type="button" class="btn btn-secondary" href="/pedido/{{ $pedidoId }}">Voltar</a>
         </form>
     </div>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
