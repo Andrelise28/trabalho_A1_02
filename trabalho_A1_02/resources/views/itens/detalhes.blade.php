@@ -10,17 +10,17 @@
 
 <body>
     <div class="container mt-5">
-        <h2>Detalhes do item 3</h2>
+        <h2>Detalhes do item {{ $item->id }}</h2>
         <form method="POST" action="/item/update/{{ $item->id }}">
             @csrf
             @method('PUT')
             <div class="form-group">
                 <label for="descricao">Descrição</label>
-                <input type="text" class="form-control" id="descricao" name="descricao" placeholder="Descrição do item 3" value="{{ $item->descricao }}">
+                <input type="text" required class="form-control" id="descricao" name="descricao" placeholder="Descrição do item 3" value="{{ $item->descricao }}">
             </div>
             <div class="form-group">
                 <label for="valor">Valor</label>
-                <input type="number" class="form-control" id="preco" name="preco" placeholder="250.00" value="{{ $item->preco }}">
+                <input type="text" required class="form-control" id="preco" name="preco" placeholder="Insira o valor no formato 10.00" value="{{ $item->preco }}">
             </div>
             <button type="submit" class="btn btn-primary">Salvar</button>
         </form>

@@ -16,7 +16,7 @@
             @csrf
             <div class="form-group">
                 <label for="data">Data</label>
-                <input type="date" class="form-control @error('data') is-invalid @enderror" id="data" name="data">
+                <input type="date" required class="form-control @error('data') is-invalid @enderror" id="data" name="data">
                 @error('data')
                 <div class="invalid-feedback">{{ $message }}</div>
                 @enderror

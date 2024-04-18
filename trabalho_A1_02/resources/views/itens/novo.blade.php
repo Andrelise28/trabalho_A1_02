@@ -15,11 +15,11 @@
             @csrf
             <div class="form-group">
                 <label for="descricao">Descrição</label>
-                <input type="text" class="form-control" id="descricao" name="descricao">
+                <input type="text" required class="form-control" id="descricao" name="descricao">
             </div>
             <div class="form-group">
                 <label for="valor">Valor</label>
-                <input type="text" class="form-control" id="preco" name="preco">
+                <input type="text" placeholder="Insira o valor no formato 10.00" required class="form-control" id="preco" name="preco">
             </div>
             <button type="submit" class="btn btn-primary">Salvar</button>
             <a type="button" class="btn btn-secondary" href="/pedido/{{ $pedidoId }}">Voltar</a>

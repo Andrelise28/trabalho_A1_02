@@ -11,7 +11,7 @@
 <body>
 
     <div class="container mt-3">
-        <h2>Detalhes do pedido 4</h2>
+        <h2>Detalhes do pedido {{ $pedido->id }}</h2>
         <form method="POST" action="/pedido/{{ $pedido->id }}">
             @csrf
             @method('PUT')
